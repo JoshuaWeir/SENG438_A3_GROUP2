@@ -81,8 +81,7 @@ Pairs Covered per Test Case: <br>
 
 calculatePositiveColTotal, calculateNegativeColTotal and calculatePositiveColTotalSpecRow each one covers all du pairs listed above
 
-DU-Pair Coverage: <br> <br>
-
+DU-Pair Coverage: <br>
 $Coverage = \frac{CU_C + PU_C}{(CU+PU)-(CU_F+PU_F)}=\frac{27}{27}=1$
 
 <strong>Range.intersect()</strong>
@@ -111,7 +110,7 @@ oneValueNotInRange – du(1, 3, b0), du(1, 3, b1) <br>
 completeIntersectOutside – du(1, 2, b0), du(1, 2, b1) <br>
 completeIntersectInside – du(1, 3, b0), du(1, 3, b1) <br>
 
-DU-Pair Coverage: <br> <br>
+DU-Pair Coverage: <br>
 $CU = CU(b0) + CU(b1) + CU(lower) + CU(upper) = 1 + 1 + 2 + 1 = 5$ <br>
 $PU = PU(b0) + PU(b1) + PU(lower) + PU(upper) = 1 + 0 + 1 + 0 = 2$ <br>
 $CU_F = 0$ <br>
