@@ -65,35 +65,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		double[][] data2 = clone(data);
 		assertArrayEquals(data,data2);
 	}
-	//61.6% does not increase
-	//@Test (expected = IllegalArgumentException.class)
-	//public void test_clone_Null() {
-	//double[][] data = null;
-	//double[][] data2 = clone(data);
-	//}
-	
-	//@Test
-	//public void test_clone_change() {
-	//double[][] data = {{1, 2, 3}, {4, 5.5, 6}, {7, 8, 9}};
-	//double[][] data2 = {{10, 11, 12}, {13, 14, 14.9}};
-	//data2 = clone(data);
-	//assertArrayEquals(data,data2);
-	//}
-	//@Test
-	//public void test_createNumberArrayFunction() {
-	//double data1 = 1;
-	//double data2 = 2;
-	//double data3 = 3;
-	//double data4 = 4;
-	//double [] arr = {1, 2, 3, 4};
-	//Number array[] = new Number[4];
-	//array[0] = data1;
-	//array[1] = data2;
-	//array[2] = data3;
-	//array[3] = data4;
-	//Number[] resultArray = DataUtilities.createNumberArray(arr);
-	//assertArrayEquals(array, resultArray);
-	//}
+
 	@Test
 		public void test_equal_inf() {
 		double[][] a = {{Double.POSITIVE_INFINITY, 0, -3}, {Double.POSITIVE_INFINITY, -4, 8.5}};
@@ -108,7 +80,6 @@ public class DataUtilitiesTest extends DataUtilities {
 	assertTrue(DataUtilities.equal(a,  b));
 	}
 
-/////////////////////////////////////////
 	@Test
 	public void equalValidDoubleArrayProvided() {
 		double[][] data = {{1,2,3,4,5}, {6,7,8,9,0}, 
@@ -120,6 +91,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		expected, actual);
 	}
 	
+	//equal tests
 	@Test
 	public void equalFirstArgNull() {
 		double [][] a = null;
@@ -167,13 +139,14 @@ public class DataUtilitiesTest extends DataUtilities {
 		assertEquals("DataUtilies.equal did not return false when args are equal in length but not in content.", false, actual);
 	}
 	
+	//clone tests
 	@Test
 	public void sourceNullElement() {
 		double [][] src = {{1,2,3,4,5}, {}, 
 				{1,3,5,7,9}, {2,4,6,8,0}, {1,4,7,0,3}};
 		double [][] clone = DataUtilities.clone(src);
 		double [][] expected = {{1,2,3,4,5}};
-		assertEquals("DataUtilies.clone copied past null element.", expected, clone);
+		assertArrayEquals(expected, clone);
 	}
 	
 	
@@ -182,7 +155,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		double [][] src = {{1,2,3,4,5}, {6,7,8,9,1}, 
 				{1,3,5,7,9}, {2,4,6,8,0}, {1,4,7,0,3}};
 		double [][] clone = DataUtilities.clone(src);
-		assertEquals("DataUtilies.clone did not copy valid src.", src, clone);
+		assertArrayEquals(src, clone);
 	}
 
 	@Test
@@ -444,11 +417,7 @@ public class DataUtilitiesTest extends DataUtilities {
 			//works as intended if exception is thrown
 		}
 	}
-	//@Test
-	//public void nonExistantColumn() {
-	//	DataUtilities.calculateColumnTotal(mockValues, 2);
-	//}
-	
+
 	//createNumberArray() tests
 	@Test
 	public void arrayExists() {
