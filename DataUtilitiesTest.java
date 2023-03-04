@@ -110,7 +110,7 @@ public class DataUtilitiesTest extends DataUtilities {
 
 /////////////////////////////////////////
 	@Test
-	public void validDoubleArrayProvided() {
+	public void equalValidDoubleArrayProvided() {
 		double[][] data = {{1,2,3,4,5}, {6,7,8,9,0}, 
 				{1,3,5,7,9}, {2,4,6,8,0}, {1,4,7,0,3}};
 		Number[][] actual = DataUtilities.createNumberArray2D(data);
@@ -121,7 +121,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	}
 	
 	@Test
-	public void testFirstArgNull() {
+	public void equalFirstArgNull() {
 		double [][] a = null;
 		double [][] b = null;
 		boolean actual = DataUtilities.equal(a, b);
@@ -129,7 +129,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	}
 	
 	@Test
-	public void testSecArgNull() {
+	public void equalSecArgNull() {
 		double [][] a = {{1,2,3,4,5}, {6,7,8,9,0}, 
 				{1,3,5,7,9}, {2,4,6,8,0}, {1,4,7,0,3}};
 		double [][] b = null;
@@ -138,7 +138,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	}
 	
 	@Test
-	public void testUnequalLength() {
+	public void equalUnequalLength() {
 		double [][] a = {{1,2,3,4,5}, {6,7,8,9,0}, 
 				{1,3,5,7,9}, {2,4,6,8,0}, {1,4,7,0,3}};
 		double [][] b = {{1,2,3,4,5}, {6,7,8,9,0}, 
@@ -148,7 +148,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	}
 	
 	@Test
-	public void testEqualLengthTrue() {
+	public void equalEqualLengthTrue() {
 		double [][] a = {{1,2,3,4,5}, {6,7,8,9,0}, 
 				{1,3,5,7,9}, {2,4,6,8,0}, {1,4,7,0,3}};
 		double [][] b = {{1,2,3,4,5}, {6,7,8,9,0}, 
@@ -158,7 +158,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	}
 	
 	@Test
-	public void testEqualLengthFalse() {
+	public void equalEqualLengthFalse() {
 		double [][] a = {{1,2,3,4,5}, {6,7,8,9,1}, 
 				{1,3,5,7,9}, {2,4,6,8,0}, {1,4,7,0,3}};
 		double [][] b = {{1,2,3,4,5}, {6,7,8,9,0}, 
