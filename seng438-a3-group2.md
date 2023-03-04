@@ -23,12 +23,67 @@ The SUT is a modified version of the JFreeChart framework. In Assignment 2, test
 Data Flow Graph is in repository.<br>
 
 Def-Use Sets: <br>
+|n|def(n)|use(n)|
+|----|-----|-----|
+|1|{data,column}|{}|
+|2|{}|{data|
+|3|{total}|{}|
+|4|{rowCount}|{data}|
+|5|{r}|{r,rowCount}|
+|6|{n}|{data,column}|
+|7|{}|{n}|
+|8|{total}|{total,n}|
+|9|{r}|{r}|
+|10|{r2}|{r2,rowCount}|
+|11|{n}|{data,r2,column}|
+|12|{}|{n}|
+|13|{total}|{total,n}|
+|14|{r2}|{r2}|
+|15|{}|{total}|
 
 DU-Pairs: <br>
+du(1, 2, data) = { [1,2] }<br>
+du(1, 4, data) = { [1,3,4] }<br>
+du(1, 6, data) = { [1,3,4,5,6] }<br>
+du(1, 11, data) = { [1,2,3,4,5,10,11]}<br><br>
+
+du(1, 6, column) = { [1,3,4,5,6] }<br>
+du(1, 11, column) = {[1,2,3,4,5,10,11]}<br><br>
+
+du(3, 8, total) = { [3,4,5,6,7,8] }<br>
+du(3, 13, total) = { [3,4,5,10,11,12,13] }<br>
+du(3, 15, total) = { [3,4,5,10,15] }<br>
+du(8, 13, total) = { [8,9,5,10,11,12,13] }<br>
+du(8, 15, total) = { [8,15] }<br>
+du(13, 15, total) = { [13,9,5,10,15] }<br><br>
+
+
+du(4, 5, rowCount) = { [4,5] }<br>
+du(4, 10, rowCount) = { [4,5,10] }<br>
+du(5, 5, r) = { [5,5] }<br>
+du(5, 6, r) = { [5,6] }<br>
+du(5, 9, r) = { [5,6,7,9] ,[5,6,7,8,9]}<br>
+du(9, 5, r) = { [9,5] }<br><br>
+
+du(6, 7, n) = { [6,7] }<br>
+du(6, 8, n) = { [6,7,8] }<br>
+du(11,12 , n) = { [11,12] }<br>
+du(11, 13, n) = { [11,12,13] }<br><br>
+
+du(10, 11, r2) = { [10,11] }<br>
+du(10, 14, r2) = { [10,11,12,14],[10,11,12,13,14] }<br>
+du(14, 10, r2) = { [14,10] }<br>
+du(10, 10, r2) = { [10,10] }<br>
+du(11, 14, r2) = { [11,12,14], [11,12,13,14]}<br><br>
+
 
 Pairs Covered per Test Case: <br>
 
+calculatePositiveColTotal, calculateNegativeColTotal and calculatePositiveColTotalSpecRow each one covers all du pairs listed above
+
 DU-Pair Coverage: <br> <br>
+
+$Coverage = \frac{CU_C + PU_C}{(CU+PU)-(CU_F+PU_F)}=\frac{27}{27}=1$
 
 <strong>Range.intersect()</strong>
 
