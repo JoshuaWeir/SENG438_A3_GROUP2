@@ -64,11 +64,9 @@ $PU = PU(b0) + PU(b1) + PU(lower) + PU(upper) = 1 + 0 + 1 + 0 = 2$ <br>
 $CU_F = 0$ <br>
 $PU_F = 0$ <br>
 $CU_C = CU_C(b0) + CU_C(b1) + CU_C(lower) + CU_C(upper) = 1 + 1 + 2 + 1 = 5$ <br>
-$PUC = PU_C(b0) + PU_C(b1) + PU_C(lower) + PU_C(upper) = 1 + 0 + 1 + 0 = 2 $ <br>
+$PUC = PU_C(b0) + PU_C(b1) + PU_C(lower) + PU_C(upper) = 1 + 0 + 1 + 0 = 2$ <br>
 
-$
-Coverage = \frac{CU_C + PU_C}{(CU+PU)-(CU_F+PU_F)}=\frac{5+2}{(5+2)-(0+0)}=1
-$
+$Coverage = \frac{CU_C + PU_C}{(CU+PU)-(CU_F+PU_F)}=\frac{5+2}{(5+2)-(0+0)}=1$
 
 # 3 A detailed description of the testing strategy for the new unit test
 
