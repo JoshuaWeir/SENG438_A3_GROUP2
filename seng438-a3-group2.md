@@ -84,7 +84,7 @@ calculatePositiveColTotal, calculateNegativeColTotal and calculatePositiveColTot
 DU-Pair Coverage: <br>
 $Coverage = \frac{CU_C + PU_C}{(CU+PU)-(CU_F+PU_F)}=\frac{27}{27}=1$
 
-<strong>Range.intersect()</strong>
+<br><strong>Range.intersect()</strong>
 
 Data Flow Graph is in repository.<br>
 
